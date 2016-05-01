@@ -1,0 +1,32 @@
+{
+  "name": "serverless-bitbucket2sns",
+  "version": "0.1.0",
+  "description": "Receive Bitbucket webhook and transform it to AWS SNS notification",
+  "author": {
+    "name": "Juha Mustonen/SC5 Online Oy"
+  },
+  "contributors": [],
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SC5/sc5-serverless-boilerplate.git"
+  },
+  "dependencies": {
+    "serverless-cors-plugin": "0.4",
+    "serverless-optimizer-plugin": "2.3.0"
+  },
+  "devDependencies": {
+    "aws-sdk": "2.2.48",
+    "localtunnel": "^1.8.1"
+  },
+  "bugs": {
+    "url": "https://github.com/SC5/sc5-serverless-boilerplate/issues"
+  },
+  "homepage": "https://github.com/SC5/sc5-serverless-boilerplate#readme",
+  "scripts": {},
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/sc5-serverless-boilerplate-0.5.2.tgz_1460203554954_0.07098083454184234"
+  }
+}
