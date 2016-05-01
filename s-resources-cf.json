@@ -39,6 +39,14 @@
                 "logs:PutLogEvents"
               ],
               "Resource": "arn:aws:logs:${region}:*:*"
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "SNS:CreateTopic",
+                "SNS:Publish"
+              ],
+              "Resource": "arn:aws:sns:${region}:*:*"
             }
           ]
         },
