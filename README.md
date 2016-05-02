@@ -26,9 +26,9 @@ sls -s dev endpoint deploy -a
 ### Configure Bitbucket repository
 
 1. See AWS API Gateway and collect webhook endpoint URL
-  <div style="border: 1px solid #444;">![API Gateway settings](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/config-aws-api-gateway.png)</div>
+  ![API Gateway settings](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/config-aws-api-gateway.png)
 1. Add webhook in Bitbucket repository: Settings > Integrations > Webhooks and paste collect URL in dialog
-  <div style="border: 1px solid #444;">![Bitbucket settings](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/config-bitbucket-webhook.png)</div>
+  ![Bitbucket settings](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/config-bitbucket-webhook.png)
 1. Done! Bitbucket webhook requests can be reviewed after sending - in a case there are some issues to solve.
 
 ### Define lambda for SNS message (optional)
@@ -37,8 +37,7 @@ Once you have Bitbucket - SNS properly configured, you can start using it. Follo
 
 Event sources:
 
-
-<div style="border: 1px solid #444;">![Lambda event source](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/config-aws-lambda-sources.png)</div>
+![Lambda event source](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/config-aws-lambda-sources.png)
 
 Code:
 
