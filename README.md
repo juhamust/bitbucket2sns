@@ -26,9 +26,9 @@ sls -s dev endpoint deploy -a
 ### Configure Bitbucket repository
 
 1. See AWS API Gateway and collect webhook endpoint URL
-  ![API Gateway settings](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/config-aws-api-gateway.png)
+  <div style="border: 1px solid #444;">![API Gateway settings](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/config-aws-api-gateway.png)</div>
 1. Add webhook in Bitbucket repository: Settings > Integrations > Webhooks and paste collect URL in dialog
-  ![Bitbucket settings](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/config-bitbucket-webhook.png)
+  <div style="border: 1px solid #444;">![Bitbucket settings](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/config-bitbucket-webhook.png)</div>
 1. Done! Bitbucket webhook requests can be reviewed after sending - in a case there are some issues to solve.
 
 ### Define lambda for SNS message (optional)
@@ -36,9 +36,12 @@ sls -s dev endpoint deploy -a
 Once you have Bitbucket - SNS properly configured, you can start using it. Following snippet shows how to trigger a lambda on notification.
 
 Event sources:
-![Lambda event source](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/config-aws-lambda-sources.png)
+
+
+<div style="border: 1px solid #444;">![Lambda event source](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/config-aws-lambda-sources.png)</div>
 
 Code:
+
 ```javascript
 'use strict';
 console.log('Loading function');
