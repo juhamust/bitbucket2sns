@@ -19,9 +19,11 @@
       "authorizationType": "none",
       "authorizerFunction": false,
       "apiKeyRequired": false,
-      "requestParameters": {},
+      "requestParameters": {
+        "integration.request.querystring.token": "method.request.querystring.token"
+      },
       "requestTemplates": {
-        "application/json": "{\"webhook\": $input.json('$')}"
+        "application/json": "{\"webhook\": $input.json('$'), \"token\": \"$input.params('token')\"}"
       },
       "responses": {
         "400": {
@@ -41,11 +43,7 @@
     }
   ],
   "events": [],
-  "environment": {
-    "SERVERLESS_PROJECT": "${project}",
-    "SERVERLESS_STAGE": "${stage}",
-    "SERVERLESS_REGION": "${region}"
-  },
+  "environment": "$${environmentVars}",
   "vpc": {
     "securityGroupIds": [],
     "subnetIds": []

@@ -15,5 +15,11 @@
       "method": "$context.httpMethod",
       "id": "$input.params('id')"
     }
+  },
+  "environmentVars": {
+    "SERVERLESS_PROJECT": "${project}",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}",
+    "BITBUCKET2SNS_TOKEN": "${bitbucket2SnsToken}"
   }
 }

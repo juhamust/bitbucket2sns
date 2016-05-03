@@ -5,6 +5,15 @@ var sns = new AWS.SNS({
   region: process.env.AWS_REGION || process.env.AWS_DEFAULT_REGION
 });
 
+const checkToken = (token, returnValue) => {
+  console.log('Envs', process.env.BITBUCKET2SNS_TOKEN, token);
+  // NOTE: If env variable is not defined, no check
+  if (token === process.env.BITBUCKET2SNS_TOKEN) {
+    return Promise.resolve(returnValue);
+  }
+  return Promise.reject('Invalid token');
+};
+
 const getTopicByName = (name) => {
   const params = {
     Name: name
@@ -44,10 +53,19 @@ const publish = (topicName, msg) => {
 };
 
 module.exports.handler = (event, context) => {
-  publish('bitbucket-sns', event.webhook)
+  console.log('Event', event);
+  if (!event.webhook || !event.token) {
+    return context.fail('Missing require data: webhook/token');
+  }
+
+  checkToken(event.token)
+  .then(() => {
+    return publish('bitbucket-sns', event.webhook)
+  })
   .then((result) => {
     return context.succeed(result);
-  }).catch((err) => {
+  })
+  .catch((err) => {
     return context.fail(err);
   });
 };
