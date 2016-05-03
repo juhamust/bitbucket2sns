@@ -1,7 +1,9 @@
 'use strict';
 const AWS = require('aws-sdk');
 
-var sns = new AWS.SNS({ region: process.env.AWS_REGION || process.env.AWS_DEFAULT_REGION });
+var sns = new AWS.SNS({
+  region: process.env.AWS_REGION || process.env.AWS_DEFAULT_REGION
+});
 
 const getTopicByName = (name) => {
   const params = {
@@ -18,8 +20,8 @@ const getTopicByName = (name) => {
 const publish = (topicName, msg) => {
   var params = {
     Message: JSON.stringify({
-      default: 'default msg',
-      json: msg
+      default: 'read target specific field instead',
+      lambda: JSON.stringify(msg)
     }),
     MessageStructure: 'json',
     TopicArn: null
@@ -41,13 +43,8 @@ const publish = (topicName, msg) => {
   });
 };
 
-const respond = (event) => {
-  //console.log('Received an event:', event);
-  return publish('bitbucket-sns', event.webhook);
-};
-
 module.exports.handler = (event, context) => {
-  respond(event)
+  publish('bitbucket-sns', event.webhook)
   .then((result) => {
     return context.succeed(result);
   }).catch((err) => {

@@ -1,7 +1,7 @@
 {
   "name": "handle-webhook",
   "runtime": "nodejs4.3",
-  "description": "Serverless Lambda function for project: serverless-bitbucket2sns",
+  "description": "Lambda for converting Bitbucket webhook into AWS SNS",
   "customName": false,
   "customRole": false,
   "handler": "handler.handler",
