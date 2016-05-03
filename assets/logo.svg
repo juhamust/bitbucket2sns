@@ -15,7 +15,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="logo.svg">
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/home/juha/projects/bitbucket2sns/assets/logo.png"
+   inkscape:export-xdpi="62.48"
+   inkscape:export-ydpi="62.48">
   <defs
      id="defs4">
     <clipPath
@@ -38,19 +41,19 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="-49.440435"
-     inkscape:cy="-72.028992"
+     inkscape:zoom="1.4"
+     inkscape:cx="119.28652"
+     inkscape:cy="71.514964"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="1797"
+     inkscape:window-width="1908"
      inkscape:window-height="914"
      inkscape:window-x="0"
      inkscape:window-y="47"
-     inkscape:window-maximized="0"
+     inkscape:window-maximized="1"
      inkscape:snap-global="false"
      fit-margin-top="15"
      fit-margin-left="15"
@@ -95,14 +98,14 @@
      id="layer1"
      transform="translate(24.241846,46.680247)">
     <g
-       id="g4321"
-       transform="translate(-754.2857,-65.714279)">
+       id="g4187">
       <path
          inkscape:connector-curvature="0"
          id="rect4285"
-         d="m 940.16721,73.683645 c -5.30245,0 -9.57031,4.26981 -9.57031,9.572266 l 0,69.427729 c 0,5.30246 4.26786,9.57227 9.57031,9.57227 l 3.97657,0 0,18.4082 18.4082,-18.4082 41.33012,0 c 5.3024,0 9.5722,-4.26981 9.5722,-9.57227 l 0,-69.427729 c 0,-5.302456 -4.2698,-9.572266 -9.5722,-9.572266 l -63.71489,0 z"
+         d="m 185.88151,7.969366 c -5.30245,0 -9.57031,4.26981 -9.57031,9.572266 l 0,69.427729 c 0,5.30246 4.26786,9.57227 9.57031,9.57227 l 3.97657,0 0,18.408199 18.4082,-18.408199 41.33012,0 c 5.3024,0 9.5722,-4.26981 9.5722,-9.57227 l 0,-69.427729 c 0,-5.302456 -4.2698,-9.572266 -9.5722,-9.572266 l -63.71489,0 z"
          style="opacity:1;fill:#f19abc;fill-opacity:1;stroke:#9e2e58;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
       <g
+         transform="translate(-754.2857,-65.714279)"
          id="text4290"
          style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1">
         <path
@@ -171,6 +174,19 @@
            d="m 1022.8353,207.04679 q 1.04,0.92 2.6,1.48 1.6,0.56 3.4,0.56 2.24,0 3.36,-0.72 1.16,-0.76 1.16,-1.92 0,-0.6 -0.24,-1.12 -0.2,-0.52 -0.8,-1 -0.56,-0.48 -1.56,-0.92 -1,-0.48 -2.6,-1.04 -2.96,-1 -4.4,-2.36 -1.44,-1.4 -1.44,-3.84 0,-1.2 0.52,-2.24 0.56,-1.04 1.56,-1.8 1.04,-0.8 2.48,-1.24 1.48,-0.44 3.36,-0.44 2.04,0 3.56,0.44 1.56,0.4 2.8,1.04 l -1,2.96 q -1.08,-0.64 -2.48,-1.04 -1.36,-0.4 -3.04,-0.4 -2.08,0 -3.16,0.84 -1.08,0.84 -1.08,1.84 0,0.48 0.16,0.88 0.2,0.4 0.68,0.76 0.48,0.36 1.28,0.72 0.8,0.36 2,0.76 1.96,0.68 3.32,1.4 1.36,0.68 2.2,1.52 0.84,0.84 1.2,1.84 0.36,0.96 0.36,2.16 0,1.4 -0.6,2.52 -0.6,1.12 -1.68,1.92 -1.08,0.76 -2.64,1.16 -1.52,0.44 -3.4,0.44 -2.4,0 -4.28,-0.6 -1.88,-0.6 -3.12,-1.56 l 1.52,-3 z"
            inkscape:connector-curvature="0" />
       </g>
-    </g>
+      <flowRoot
+         transform="matrix(1.2962471,0,0,1.2962471,5.350319,-272.51881)"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#9e2e58;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+         id="flowRoot4164"
+         xml:space="preserve"><flowRegion
+           id="flowRegion4166"><rect
+             style="fill:#9e2e58;"
+             y="223.08887"
+             x="138.3909"
+             height="56.568542"
+             width="54.043159"
+             id="rect4168" /></flowRegion><flowPara
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#9e2e58;"
+           id="flowPara4170">{}</flowPara></flowRoot>    </g>
   </g>
 </svg>
