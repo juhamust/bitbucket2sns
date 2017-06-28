@@ -20,6 +20,11 @@ sls --version
 git clone https://github.com/juhamust/bitbucket2sns.git
 cd bitbucket2sns/
 npm install
+
+# Edit settings if needed
+vim env.yml
+
+# Deploy
 sls deploy --profile=my-aws-profile
 
 # Output (copy endpoint address)
