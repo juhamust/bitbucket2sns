@@ -1,60 +1,54 @@
-![logo](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/logo.png)
+# Bitbucket2SNS
 
-Bitbucket2SNS transforms Bitbucket webhook requests into AWS SNS -notifications, making it possible to trigger for example lambda function on every commit. Bitbucket2SNS itself is implemented as Serverless powered lambda, making it cost effective to host.
+Bitbucket2SNS transforms Bitbucket webhook requests into [AWS SNS](https://aws.amazon.com/sns/) -notifications, making it easy to integrate with other AWS services, for example run [Lambda function](https://aws.amazon.com/lambda/) on every commit.
 
-### Install Node and Serverless
+![Sequence](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/bitbucket2sns.png)
 
-Install recent Node (v4.3 preferred) and Serverless packages. Usage of `nvm` is encouraged.
+[![Build Status](https://travis-ci.org/juhamust/bitbucket2sns.svg?branch=master)](https://travis-ci.org/juhamust/bitbucket2sns)
+
+### Deploy to AWS
+
+Install recent Node (v6.10 preferred) and Serverless packages. Usage of `nvm` is encouraged.
 
 ```bash
-nvm use v4
-npm install -g serverless@0.5.5
+# Install Node and Serverless
+nvm use v6.10
+npm install -g serverless@1.12
 sls --version
-```
 
-### Deploy Bitbucket2SNS lambda
-
-```bash
 # Clone and init codebase
 git clone https://github.com/juhamust/bitbucket2sns.git
 cd bitbucket2sns/
 npm install
-# Define the AWS project env
-sls project init
-> Serverless: Enter a new stage name for this project:
->   Existing Profile
->   Create A New Profile
-# Configure token that is used for authentication
-sls -s dev variables set
-> Serverless: Enter variable key to set a value to: bitbucket2Sns
-> Serverless: Enter variable value to set a value to:  secret
-# Deploy code
-sls -s dev function deploy -a
-sls -s dev endpoint deploy -a
+sls deploy --profile=my-aws-profile
+
+# Output (copy endpoint address)
+> Service Information
+> service: bitbucket2sns
+> stage: dev
+> region: eu-central-1
+> api keys:
+>   None
+> endpoints:
+>   POST - https://123123.execute-api.eu-central-1.amazonaws.com/dev/webhook
+> functions:
+>   webhook: bitbucket2sns-dev-webhook
 ```
 
-### Configure AWS
-
-This section assumes you already have an AWS account. Also, the actual configuration changes are done by Serverless, so only checking the outcome is needed
-
-1. Go to API Gateway -service
-1. Select the API in question
-1. Expand the stages and see webhook endpoint URL
-
-  ![API Gateway settings](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/config-aws-api-gateway.png)
-
-## Configure Bitbucket repository
+### Configure Bitbucket repository
 
 1. Open Bitbucket repository (that you want to send webhook requests to AWS) settings
 1. Open webhook -section in Bitbucket repository: Settings > Integrations > Webhooks
-1. Click **Add webhook** and paste collect URL in dialog **and** set the authentication token as `?token=<tokenvalue>`. Example: `https://123123.execute-api.eu-west-1.amazonaws.com/dev/webhook?token=secret`
-1. Done! You can test the functionality by committing a new change set. Bitbucket webhook requests can be reviewed after sending in **View requests**.
+1. Click **Add webhook** and paste the collected URL **and** set the authentication token as `?token=<tokenvalue>` (usage of token is optional but recommended). Example: `https://123123.execute-api.eu-west-1.amazonaws.com/dev/webhook?token=secret`
+1. You can test the functionality by committing a new change set. Bitbucket webhook requests can be reviewed after sending in **View requests**.
 
   ![Bitbucket settings](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/config-bitbucket-webhook.png)
 
+1. You can see the Lambda logs in [AWS CloudWatch](https://aws.amazon.com/cloudwatch/)
+
 ### Define lambda for SNS message (optional)
 
-Once you have Bitbucket - SNS properly configured, you can start using it. Following snippet shows how to trigger a lambda on notification.
+Once you've setup Bitbucket - SNS properly configured, you can start using it. Following snippet shows how to trigger a lambda on notification.
 
 1. Go to Lambda -service
 1. Start new Lambda with **Create a Lambda function**
@@ -67,13 +61,24 @@ Once you have Bitbucket - SNS properly configured, you can start using it. Follo
 console.log('Loading function');
 
 exports.handler = (event, context, callback) => {
-    const message = event.Records[0].Sns.Message;
-    console.log('From SNS:', message);
-    callback(null, message);
+  const message = event.Records[0].Sns.Message;
+  console.log('From SNS:', message);
+  callback(null, message);
 };
 ```
 ![Lambda event source](https://raw.githubusercontent.com/juhamust/bitbucket2sns/master/assets/config-aws-lambda-sources.png)
 
+## Changelog
+
+#### 0.2.0
+
+- Support for Serverless 1.x
+- Added unit testing
+
+#### 0.1.0
+
+- Initial release
+
 ## License
 
-Registered under liberal MIT license.
+MIT -licensed

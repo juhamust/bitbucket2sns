@@ -1,0 +1,41 @@
+---
+service: bitbucket2sns
+
+plugins:
+  - serverless-plugin-optimize
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  memorySize: 128
+  stage: ${opt:stage,self:custom.defaults.stage}
+  region: ${opt:region,self:custom.defaults.region}
+  profile: ${opt:profile,env:AWS_PROFILE,self:custom.defaults.profile}
+  environment: ${file(./${opt:env,self:custom.defaults.env}.yml)}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - sns:ListTopics
+        - sns:CreateTopic
+        - sns:Publish
+        - sns:Subscribe
+      Resource:
+        - arn:aws:sns:${self:provider.region}:*:BITBUCKET2SNS_TOKEN
+
+custom:
+  defaults:
+    stage: dev
+    region: eu-central-1
+    env: env
+    profile: default
+
+functions:
+  webhook:
+    description: Handle incoming POST request from Bitbucket
+    handler: functions/handle-webhook/handler.handler
+    events:
+      - http: POST webhook
+

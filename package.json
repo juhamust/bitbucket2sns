@@ -1,6 +1,6 @@
 {
   "name": "bitbucket2sns",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Receive Bitbucket webhook messages and transform it to AWS SNS notification",
   "author": {
     "name": "Juha Mustonen/SC5 Online Oy"
@@ -12,16 +12,21 @@
     "type": "git",
     "url": "git+https://github.com/juhamust/bitbucket2sns.git"
   },
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
-    "serverless-cors-plugin": "0.4",
-    "serverless-optimizer-plugin": "2.3.0"
+    "debug": "^2.6.8"
   },
   "devDependencies": {
-    "aws-sdk": "2.2.48"
+    "aws-sdk": "^2.2.48",
+    "aws-sdk-mock": "^1.7.0",
+    "babel-preset-env": "^1.5.2",
+    "jest": "^20.0.4",
+    "serverless-plugin-optimize": "^3.0.1-rc.1"
   },
   "bugs": {
     "url": "https://github.com/juhamust/bitbucket2sns/issues"
   },
-  "homepage": "https://github.com/juhamust/bitbucket2sns#readme",
-  "scripts": {}
+  "homepage": "https://github.com/juhamust/bitbucket2sns#readme"
 }

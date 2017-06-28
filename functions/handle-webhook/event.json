@@ -1,1 +1,4 @@
-{}
+{
+  "queryStringParameters": { "token": "test" },
+  "body": "{\"push\": {\"changes\": [{}] }}"
+}

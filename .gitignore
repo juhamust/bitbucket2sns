@@ -39,6 +39,6 @@ node_modules
 #SERVERLESS
 admin.env
 .env
-
-#Ignore _meta folder
+local.yml
 _meta
+.serverless
